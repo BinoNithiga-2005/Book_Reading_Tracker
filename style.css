@@ -159,6 +159,25 @@ body {
     outline: none;
 }
 
+.searchBar {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#search {
+    padding: 10px;
+    width: 40%;
+    border-radius: 10px;
+    border: solid #f52761;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+}
+
+.searchBar input::placeholder {
+    color: white;
+}
+
 @media screen and (max-width:1200px) {
 
     .book-container {
@@ -193,6 +212,11 @@ body {
     padding: 5px;
     border-radius: 5px;
     outline: none;
+}
+
+.update-pages::placeholder {
+    color: white;
+
 }
 
 @media screen and (max-width:400px) {

@@ -13,6 +13,14 @@ let cancelButton = document.getElementById("cancel-popup")
 
 cancelButton.addEventListener("click", function (event) {
     event.preventDefault()
+    
+    // clear input fileds
+    bookImage.value = '';
+    bookTitle.value = '';
+    bookAuthor.value = '';
+    bookDescription.value = '';
+    bookUrl.value = '';
+    bookPages.value = '';
     popupBox.style.display = "none";
     popupOverlay.style.display = "none"
 })
@@ -57,12 +65,14 @@ Container.addEventListener("click", function (event) {
     }
 });
 
+//Delete book
 function deletebook(event) {
     if (confirm("Are you sure you want to delete this book?")) {
         event.target.parentElement.remove();
     }
 }
 
+//Update Page number
 function updatePages(event) {
     let bookDiv = event.target.parentElement;
     let newPages = bookDiv.querySelector(".update-pages").value;
@@ -78,3 +88,22 @@ function updatePages(event) {
         alert("Please Enter a valid number of pages.")
     }
 }
+
+//Search box
+let searchInput = document.getElementById("search");
+searchInput.addEventListener("keyup", function () {
+    let searchText = searchInput.value.toLowerCase();
+    let Books = document.querySelectorAll(".book-container");
+    Books.forEach(function (book) {
+        let title = book.querySelector("h2").textContent.toLowerCase();
+        let author = book.querySelector("h5").textContent.toLowerCase();
+
+        if (title.includes(searchText) || author.includes(searchText)) {
+            book.style.display = "";
+        }
+        else {
+            book.style.display = "none";
+
+        }
+    })
+})
