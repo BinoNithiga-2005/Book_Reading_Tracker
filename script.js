@@ -43,7 +43,7 @@ addBook.addEventListener("click", function (event) {
     popupOverlay.style.display = "none"
     let div = document.createElement("div");
     div.setAttribute("class", "book-container");
-    div.innerHTML = `<img src="${bookImage.value}" alt="BookCover"> <h2>${bookTitle.value}</h2> <h5>${bookAuthor.value}</h5>  <a href="${bookUrl.value}">Click to Read</a> <p>${bookDescription.value}</p> <h4 class="pages">Pages Read:<span>${bookPages.value || 0}</span></h4> <input type="number" class = "update-pages" placeholder = "Update Pages Here"> <button onclick = "updatePages(event)">Update</button> <button onclick="deletebook(event) ">Delete</button>`
+    div.innerHTML = `<img src="${bookImage.value}" alt="BookCover"> <h2>${bookTitle.value}</h2> <h5>${bookAuthor.value}</h5> <p>${bookDescription.value}</p>  <a href="${bookUrl.value}" target="_blank">Click to Read</a> <h4 class="pages">Pages Read:<span>${bookPages.value || 0}</span></h4> <input type="number" class = "update-pages" placeholder = "Update Pages Here"> <button onclick = "updatePages(event)">Update</button> <button onclick="deletebook(event) ">Delete</button>`
     Container.appendChild(div);
 
     // clear input fileds
